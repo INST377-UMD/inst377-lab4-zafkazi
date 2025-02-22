@@ -11,14 +11,19 @@
                 <form name="contactForm" onsubmit="return formValidation()" action="https://www.google.com">
                     <label for="name">Name: </label>
                     <input type:"text" id="name" required>
-                    <input type="submit" id="button-submit" value="Alert Me!">
+                    <input type="submit" id="alert" value="Alert Me!">
                 </form>
             <!--Javascript-->    
             <script type="text/javascript">
                 function formValidation(){
+                    name = document.getElementById("name").value
                     console.log('Validating user input:', document.contactForm.name.value)
-                    if(document.contactForm.name.value.trim() == "") {//remove whitespace
+                    const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    if(document.contactForm.name.value.trim() == "") {
                         alert('Enter a valid name')
+                    }
+                    else{
+                        alert("Hi " + name + "!")
                     }
                     return false;
                 }
@@ -27,16 +32,54 @@
 
             </div>
             <div class="color">
-                <input type="submit" id="button-submit" value="Change Color">
+                <input type="submit" id="colorchange" value="Change Color" onclick="changeColor()">
             </div>
+            <!--Javascript-->
+            <script type="text/javascript">
+                function changeColor(){
+                    console.log('Attempting to change background color, current color is: ', document.body.style.backgroundColor)
+                    let body = document.body;
+                    if (body.style.backgroundColor == "cyan") {
+                        body.style.backgroundColor = "gray";
+                    } else {
+                        body.style.backgroundColor = "cyan";
+                    }
+                    console.log('Successfully changed background color, current color is: ', document.body.style.backgroundColor)
+                }
+            </script>
+
             <div class="tester">
-                <label for="tester">Test Tester: </label>
-                <input type:"text" id="test" required>
-                <input type="submit" id="button-submit" value="Validate text">
+                <form name="tester" onsubmit="return formValidation2()" action="https://www.google.com">
+                    <label for="tester">Test Tester: </label>
+                    <input type:"text" id="test" required>
+                    <input type="submit" id="button-submit" value="Validate text">
+                </form>
             </div>
+            <!--Javascript-->
+            <script type="text/javascript">
+                function formValidation2(){
+                    name = document.getElementById("test").value
+                    console.log('Validating user input:', document.contactForm.name.value)
+                    const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    if(document.contactForm.name.value.trim() == "") {
+                        alert('Enter a valid name')
+                    }
+                    else{
+                        alert("Hi " + name + "!")
+                    }
+                    return false;
+                }
+
+            </script>
+
+
             <div class="add_text">
                 <input type="submit" id="button-submit" value="Add Text">
             </div>
+            <!--Javascript-->
+            <script type="text/javascript">
+
+            </script>
         </div>
     </body>
 

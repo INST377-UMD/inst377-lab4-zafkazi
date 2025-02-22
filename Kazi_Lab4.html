@@ -8,9 +8,23 @@
 
         <div class="main_box">
             <div class="box1">
-                <label for="name">Name: </label>
-                <input type:"text" id="name" required>
-                <input type="submit" id="button-submit" value="Alert Me!">
+                <form name="contactForm" onsubmit="return formValidation()" action="https://www.google.com">
+                    <label for="name">Name: </label>
+                    <input type:"text" id="name" required>
+                    <input type="submit" id="button-submit" value="Alert Me!">
+                </form>
+            <!--Javascript-->    
+            <script type="text/javascript">
+                function formValidation(){
+                    console.log('Validating user input:', document.contactForm.name.value)
+                    if(document.contactForm.name.value.trim() == "") {//remove whitespace
+                        alert('Enter a valid name')
+                    }
+                    return false;
+                }
+
+            </script>   
+
             </div>
             <div class="color">
                 <input type="submit" id="button-submit" value="Change Color">

@@ -2,32 +2,48 @@ body{
     background-color: lightseagreen;
 }
 .main_box{
-    width: 100%;
+    width: 95%;
     float: left;
     margin: 0;
     color: white;
 }
 .box1{
     background-color: purple;
-    padding: 10px;
+    padding: 20px;
     border: 3px solid white;
     border-radius: 10px;
+    width: 45%;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
 }
 .color{
     background-color: purple;
-    padding: 10px;
+    padding: 20px;
     border: 3px solid white;
     border-radius: 10px;
+    float: right;
+    width: 45%;
+    text-align: center;
+    margin-top: 50px;
 }
 .tester{
     background-color: purple;
-    padding: 10px;
+    padding: 20px;
     border: 3px solid white;
     border-radius: 10px;
+    width: 45%;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
 }
 .add_text{
     background-color: purple;
-    padding: 10px;
+    padding: 20px;
     border: 3px solid white;
     border-radius: 10px;
+    width: 45%;
+    float: right;
+    text-align: center;
+    margin-top: 50px;
 }

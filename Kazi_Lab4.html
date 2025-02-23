@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="Kazi_Lab4.css">
     </header>
     <body>
-        <h1>INST377 - Lab 4</h1>
+        <h1 id="heading">INST377 - Lab 4</h1>
 
         <div class="main_box">
             <div class="box1">
@@ -73,12 +73,15 @@
             </script>
 
 
-            <div class="add_text">
-                <input type="submit" id="button-submit" value="Add Text">
+            <div class="addText">
+                <input type="submit" id="add_text" value="Add Text" onclick="addToH1()">
             </div>
             <!--Javascript-->
             <script type="text/javascript">
-
+                function addToH1(){
+                    let header = document.getElementById("heading");
+                    header.textContent += " Add Text";
+                }
             </script>
         </div>
     </body>

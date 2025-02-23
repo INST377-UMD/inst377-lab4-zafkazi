@@ -48,24 +48,20 @@
                 }
             </script>
 
-            <div class="tester">
-                <form name="tester" onsubmit="return formValidation2()" action="https://www.google.com">
-                    <label for="tester">Test Tester: </label>
-                    <input type:"text" id="test" required>
+            <div class="tester" >
+                <form name="tester" onsubmit="return textValidation()">
+                    <label for="tester">Text Tester: </label>
+                    <input type:"text" id="testing" required>
                     <input type="submit" id="button-submit" value="Validate text">
                 </form>
             </div>
             <!--Javascript-->
             <script type="text/javascript">
-                function formValidation2(){
-                    name = document.getElementById("test").value
-                    console.log('Validating user input:', document.contactForm.name.value)
+                function textValidation(){
+                    inputTest = document.getElementById("testing").value
                     const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-                    if(document.contactForm.name.value.trim() == "") {
-                        alert('Enter a valid name')
-                    }
-                    else{
-                        alert("Hi " + name + "!")
+                    if(validationRegex.test(inputTest)) {
+                        alert('how about.....nah')
                     }
                     return false;
                 }
@@ -80,7 +76,7 @@
             <script type="text/javascript">
                 function addToH1(){
                     let header = document.getElementById("heading");
-                    header.textContent += " Add Text";
+                    header.innerHTML = "INST377 - Lab 4 Add Text";
                 }
             </script>
         </div>

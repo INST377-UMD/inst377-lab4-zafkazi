@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="Kazi_Lab4.css">
+    </header>
+    <body>
+        <h1 id="heading">INST377 - Lab 4</h1>
+
+        <div class="main_box">
+            <div class="box1">
+                <form name="contactForm" onsubmit="return formValidation()" action="https://www.google.com">
+                    <label for="name">Name: </label>
+                    <input type:"text" id="name" required>
+                    <input type="submit" id="alert" value="Alert Me!">
+                </form>
+            <!--Javascript-->    
+            <script type="text/javascript">
+                function formValidation(){
+                    name = document.getElementById("name").value
+                    console.log('Validating user input:', document.contactForm.name.value)
+                    const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    if(document.contactForm.name.value.trim() == "") {
+                        alert('Enter a valid name')
+                    }
+                    else{
+                        alert("Hi " + name + "!")
+                    }
+                    return false;
+                }
+
+            </script>   
+
+            </div>
+            <div class="color">
+                <input type="submit" id="colorchange" value="Change Color" onclick="changeColor()">
+            </div>
+            <!--Javascript-->
+            <script type="text/javascript">
+                function changeColor(){
+                    console.log('Attempting to change background color, current color is: ', document.body.style.backgroundColor)
+                    let body = document.body;
+                    if (body.style.backgroundColor == "cyan") {
+                        body.style.backgroundColor = "gray";
+                    } else {
+                        body.style.backgroundColor = "cyan";
+                    }
+                    console.log('Successfully changed background color, current color is: ', document.body.style.backgroundColor)
+                }
+            </script>
+
+            <div class="tester" >
+                <form name="tester" onsubmit="return textValidation()">
+                    <label for="tester">Text Tester: </label>
+                    <input type:"text" id="testing" required>
+                    <input type="submit" id="button-submit" value="Validate text">
+                </form>
+            </div>
+            <!--Javascript-->
+            <script type="text/javascript">
+                function textValidation(){
+                    inputTest = document.getElementById("testing").value
+                    const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    if(validationRegex.test(inputTest)) {
+                        alert('how about.....nah')
+                    }
+                    return false;
+                }
+
+            </script>
+
+
+            <div class="addText">
+                <input type="submit" id="add_text" value="Add Text" onclick="addToH1()">
+            </div>
+            <!--Javascript-->
+            <script type="text/javascript">
+                function addToH1(){
+                    let header = document.getElementById("heading");
+                    header.innerHTML = "INST377 - Lab 4 Add Text";
+                }
+            </script>
+        </div>
+    </body>
+
+</html>
